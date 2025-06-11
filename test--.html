@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inoussa Simpore - Business Analyst</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+            @keyframes bounce-zoom-rotate {
+        0% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0;
+        }
+        50% {
+        transform: scale(1.05) rotate(3deg);
+        opacity: 1;
+        }n
+        100% {
+        transform: scale(1) rotate(0deg);
+        }
+        }
+
+        .dynamic-photo {
+        animation: bounce-zoom-rotate 1.5s ease-out;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dynamic-photo:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        } 
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .lead {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .stats {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-year {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--bg-light);
+        }
+
+        .skill-item {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg-light);
+        }
+
+        .projects-container {
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .projects-scroll {
+            display: flex;
+            gap: 30px;
+            padding: 20px 0;
+            min-width: max-content;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            min-width: 400px;
+            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8));
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 0.6;
+        }
+
+        .project-image-1 {
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .project-image-2 {
+            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .project-image-3 {
+            background-image: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .project-image-4 {
+            background-image: url('https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .project-image-5 {
+            background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .project-link {
+            flex: 1;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .link-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .link-secondary {
+            background: var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .contact-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h6 {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .projects-scroll {
+                padding-left: 15px;
+            }
+            
+            .project-card {
+                min-width: 300px;
+                max-width: 300px;
+            }
+        }
+
+        /* Scrollbar */
+        .projects-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .projects-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .projects-container::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .projects-container::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Inoussa Simpore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Contenu texte à gauche -->
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1>Inoussa Simpore</h1>
+                        <p class="lead">Business Analyst & Data Specialist</p>
+                        <p class="mb-4">
+                            Transformateur de données en insights stratégiques pour optimiser les performances business
+                            et soutenir la prise de décision éclairée.
+                        </p>
+                        <a href="#about" class="btn btn-primary btn-lg">Découvrir mon profil</a>
+                    </div>
+                </div>
+
+                <!-- Photo de profil à droite -->
+                <div class="col-lg-4 text-center">
+                    <img src="photo-profil.jpeg" alt="Inoussa Simpore"style="max-width: 350px;">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title fade-in">À propos</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="about-content fade-in">
+                        <p>Passionné par l'analyse de données et l'optimisation des processus métier, je combine une solide formation en informatique et entrepreneuriat avec une expertise approfondie en Business Analytics. Mon parcours unique me permet d'appréhender les défis business sous un angle technique et stratégique.</p>
+                        
+                        <p>Fort de mon MBA en Business Analytics et de ma formation en informatique-entrepreneuriat, j'aide les organisations à transformer leurs données en leviers de croissance. Je maîtrise l'ensemble de la chaîne analytique : de la collecte et modélisation des données jusqu'à la création de tableaux de bord interactifs et la formulation de recommandations stratégiques.</p>
+                        
+                        <p>Ma mission : révéler le potentiel caché de vos données pour accélérer votre performance business et optimiser vos processus décisionnels.</p>
+                    </div>
+                    
+                    <div class="stats fade-in">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <div class="stat-number">5+</div>
+                                    <div class="stat-label">Années d'expérience</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Projets réalisés</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-item">
+                                    <div class="stat-number">15+</div>
+                                    <div class="stat-label">Clients satisfaits</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Formation</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="education-item fade-in">
+                        <div class="education-year">2022-2024</div>
+                        <h4>MBA Business Analytics</h4>
+                        <h6 class="text-primary">Marwadi University, Inde</h6>
+                        <p>Formation avancée en analyse de données, intelligence d'affaires, modélisation prédictive et stratégie data-driven. Spécialisation en visualisation de données, machine learning appliqué au business et optimisation des processus décisionnels.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-primary me-2"></i> Data Mining & Machine Learning</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Business Intelligence & Visualization</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Strategic Analytics & KPI Management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="education-item fade-in">
+                        <div class="education-year">2018-2021</div>
+                        <h4>Licence Informatique & Entrepreneuriat</h4>
+                        <h6 class="text-primary">Burkina Institute of Technology</h6>
+                        <p>Formation pluridisciplinaire alliant développement informatique, gestion de projet et entrepreneuriat. Acquisition de compétences techniques solides en programmation, bases de données et systèmes d'information, complétées par une approche business et innovation.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-primary me-2"></i> Développement logiciel & Bases de données</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Gestion de projet & Méthodologies Agiles</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Innovation & Business Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+<!-- Skills Section -->
+<section id="skills" class="section skills">
+    <div class="container">
+        <h2 class="section-title fade-in">Compétences</h2>
+        <div class="row g-4">
+            <!-- Compétences existantes -->
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h5 class="skill-name">Power BI</h5>
+                    <p class="skill-level">Expert - Dashboards interactifs</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5 class="skill-name">Tableau</h5>
+                    <p class="skill-level">Avancé - Visualisation de données</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h5 class="skill-name">Python</h5>
+                    <p class="skill-level">Avancé - Pandas, NumPy, Scikit-learn</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h5 class="skill-name">SQL</h5>
+                    <p class="skill-level">Avancé - MySQL, PostgreSQL</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h5 class="skill-name">Excel Avancé</h5>
+                    <p class="skill-level">Expert - Power Query, Pivot</p>
+                </div>
+            </div>
+           
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h5 class="skill-name">KPIs & Métriques</h5>
+                    <p class="skill-level">Expert - Performance Management</p>
+                </div>
+            </div>
+
+            <!-- Nouvelles compétences ajoutées -->
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h5 class="skill-name">Business Intelligence</h5>
+                    <p class="skill-level">Expert - Stratégie Data-Driven</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h5 class="skill-name">Leadership</h5>
+                    <p class="skill-level">Avancé - Gestion d'équipe</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h5 class="skill-name">Transformation Digitale</h5>
+                    <p class="skill-level">Avancé - Conduite du changement</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Services</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Analyse de Marché</h4>
+                        <p>Études approfondies des tendances marché, analyse concurrentielle et identification d'opportunités business basées sur des données fiables et des insights actionables.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <h4>Visualisation de Données</h4>
+                        <p>Création de tableaux de bord interactifs et de rapports dynamiques avec Power BI et Tableau pour transformer vos données en insights visuels percutants.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>Automatisation de Reporting</h4>
+                        <p>Développement de solutions automatisées pour la génération de rapports récurrents, optimisant votre temps et garantissant la fiabilité des données.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-chess-knight"></i>
+                        </div>
+                        <h4>Planification Stratégique</h4>
+                        <p>Accompagnement dans l'élaboration de stratégies data-driven, définition de KPIs pertinents et mise en place de tableaux de bord de pilotage.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Optimisation de Processus</h4>
+                        <p>Analyse et amélioration des processus métier existants par l'identification des goulots d'étranglement et la proposition de solutions innovantes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Conseil en Business Intelligence</h4>
+                        <p>Accompagnement complet dans votre transformation digitale : audit des besoins, choix des outils, formation des équipes et suivi de performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Projets Réalisés</h2>
+            <div class="projects-container">
+                <div class="projects-scroll">
+                    <div class="project-card fade-in">
+                        <div class="project-image project-image-1"></div>
+                        <div class="project-content">
+                            <h4 class="project-title">Dashboard Performance Commerciale</h4>
+                            <p class="project-description">
+                                <strong>Contexte :</strong> Entreprise de distribution cherchant à optimiser ses ventes<br>
+                                <strong>Problématique :</strong> Manque de visibilité sur les performances par région/produit<br>
+                                <strong>Solution :</strong> Tableau de bord interactif avec KPIs temps réel et analyses prédictives
+                            </p>
+                            
+                            <div class="project-links">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiExample1" class="project-link link-primary" target="_blank">Power BI</a>
+                                <a href="portfolio-detail.html" class="project-link link-secondary" target="_blank">Détails</a>
+                                <a href="https://github.com/inoussa-simpore/sales-dashboard" class="project-link link-secondary" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-image project-image-2"></div>
+                        <div class="project-content">
+                            <h4 class="project-title">Analyse Satisfaction Client</h4>
+                            <p class="project-description">
+                                <strong>Contexte :</strong> Service client d'une entreprise e-commerce<br>
+                                <strong>Problématique :</strong> Identifier les facteurs d'insatisfaction client<br>
+                                <strong>Solution :</strong> Analyse sentimentale et segmentation client avec modèles ML
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Tableau</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://public.tableau.com/app/profile/inoussa/viz/CustomerSatisfaction" class="project-link link-primary" target="_blank">Tableau</a>
+                                <a href="projet-1-details.html" class="project-link link-secondary" target="_blank">Détails</a>
+                                <a href="https://github.com/inoussa-simpore/customer-analysis" class="project-link link-secondary" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-image project-image-3"></div>
+                        <div class="project-content">
+                            <h4 class="project-title">Projet Dashboard RH</h4>
+                            <p class="project-description">
+                                <strong>Contexte :</strong> Entreprise technologique/pharmaceutique de 1,470 employés confrontée à des défis critiques de gestion des talents et planification RH stratégique<br>
+                                <strong>Problématique :</strong> Manque de visibilité sur les risques de départs , talents sous-exploités (74 R&D), et absence d'outils prédictifs pour optimiser les promotions et la rétention  <br>
+                                <strong>Solution :</strong>  Dashboard RH interactif avec analytics prédictifs, pour une gestion proactive des talents
+                            </p>
+                           
+                            <div class="project-links">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiExample3" class="project-link link-primary" target="_blank">Power BI</a>
+                                <a href="portfolio-detail.html" class="project-link link-secondary" target="_blank">Détails</a>
+                                <a href="https://github.com/inoussa-simpore/hotel-forecasting" class="project-link link-secondary" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-image project-image-4"></div>
+                        <div class="project-content">
+                            <h4 class="project-title">Analyse Financière Bancaire</h4>
+                            <p class="project-description">
+                                <strong>Contexte :</strong> Institution financière analysant les risques de crédit<br>
+                                <strong>Problématique :</strong> Évaluer et prédire les risques de défaut<br>
+                                <strong>Solution :</strong> Modèle de scoring avec analyse des patterns de comportement
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Logistic Regression</span>
+                                <span class="tech-tag">Azure SQL</span>
+                                <span class="tech-tag">Power BI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiExample4" class="project-link link-primary" target="_blank">Power BI</a>
+                                <a href="projet-1-details.html" class="project-link link-secondary" target="_blank">Détails</a>
+                                <a href="https://github.com/inoussa-simpore/credit-risk-analysis" class="project-link link-secondary" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-image project-image-5"></div>
+                        <div class="project-content">
+                            <h4 class="project-title">Optimisation Supply Chain</h4>
+                            <p class="project-description">
+                                <strong>Contexte :</strong> Entreprise manufacturière optimisant sa chaîne logistique<br>
+                                <strong>Problématique :</strong> Réduire les coûts et délais de livraison<br>
+                                <strong>Solution :</strong> Dashboard temps réel avec optimisation des flux et stocks
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Excel VBA</span>
+                                <span class="tech-tag">Power Query</span>
+                                <span class="tech-tag">Tableau</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://public.tableau.com/app/profile/inoussa/viz/SupplyChain" class="project-link link-primary" target="_blank">Tableau</a>
+                                <a href="projet-1-details.html class="project-link link-secondary" target="_blank">Colab</a>
+                                <a href="https://github.com/inoussa-simpore/supply-chain-optimization" class="project-link link-secondary" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-info fade-in">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h6>Email</h6>
+                                        <p><a href="mailto:inoussa.simpore@gmail.com">inoussasimpore4@gmail.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h6>Téléphone</h6>
+                                        <p><a href="tel:+22670123456">+22655263911</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h6>LinkedIn</h6>
+                                        <p><a href="https://linkedin.com/in/inoussa-simpore" target="_blank">linkedin.com/in/inoussa-simpore</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h6>Localisation</h6>
+                                        <p>Ouagadougou, Burkina Faso</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h5>Inoussa Simpore</h5>
+                    <p class="mb-3">Créé avec HTML, CSS, Bootstrap & ❤️ de l'analyse de données</p>
+                    <p>&copy; 2025 Inoussa Simpore. Tous droits réservés.</p>
+                    
+                    <div class="social-links">
+                        <a href="inoussasimpore4@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/inoussa-simpore" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://colab.research.google.com/github/inoussa-simpore" class="social-link" target="_blank">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href=" https://linkedin.com/in/inoussa-simpore " class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + '+';
+            }, 50);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        animateCounter(stat, target);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Add hover effect to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-10px) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>F
