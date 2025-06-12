@@ -80,29 +80,6 @@
             position: relative;
             z-index: 2;
         }
-            @keyframes bounce-zoom-rotate {
-        0% {
-        transform: scale(0.8) rotate(0deg);
-        opacity: 0;
-        }
-        50% {
-        transform: scale(1.05) rotate(3deg);
-        opacity: 1;
-        }n
-        100% {
-        transform: scale(1) rotate(0deg);
-        }
-        }
-
-        .dynamic-photo {
-        animation: bounce-zoom-rotate 1.5s ease-out;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .dynamic-photo:hover {
-        transform: scale(1.05) rotate(2deg);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        } 
 
         .hero h1 {
             font-size: 3.5rem;
@@ -585,12 +562,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -601,23 +578,13 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Contenu texte à gauche -->
                 <div class="col-lg-8">
                     <div class="hero-content">
                         <h1>Inoussa Simpore</h1>
                         <p class="lead">Business Analyst & Data Specialist</p>
-                        <p class="mb-4">
-                            Transforming data into strategic insights to optimize business performance
-                            and support informed decision-making.
-                        </p>
-                        <a href="#about" class="btn btn-primary btn-lg">Discover my profile</a>
+                        <p class="mb-4">Transformateur de données en insights stratégiques pour optimiser les performances business et soutenir la prise de décision éclairée.</p>
+                        <a href="#about" class="btn btn-primary btn-lg">Découvrir mon profil</a>
                     </div>
-                </div>
-
-                <!-- Photo de profil à droite -->
-                <div class="col-lg-4 text-center">
-                    <img src="images/photo-profil.jpeg" alt="Inoussa Simpore"style="max-width: 350px;">
-                   
                 </div>
             </div>
         </div>
@@ -626,15 +593,15 @@
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title fade-in">About</h2>
+            <h2 class="section-title fade-in">À propos</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="about-content fade-in">
-                        <p>Passionate about data analysis and business process optimization, I combine a solid background in computer science and entrepreneurship with deep expertise in Business Analytics. My unique journey allows me to approach business challenges from both technical and strategic angles.</p>
+                        <p>Passionné par l'analyse de données et l'optimisation des processus métier, je combine une solide formation en informatique et entrepreneuriat avec une expertise approfondie en Business Analytics. Mon parcours unique me permet d'appréhender les défis business sous un angle technique et stratégique.</p>
                         
-                        <p>With my MBA in Business Analytics and background in computer science-entrepreneurship, I help organizations transform their data into growth drivers. I master the entire analytical chain: from data collection and modeling to creating interactive dashboards and formulating strategic recommendations.</p>
+                        <p>Fort de mon MBA en Business Analytics et de ma formation en informatique-entrepreneuriat, j'aide les organisations à transformer leurs données en leviers de croissance. Je maîtrise l'ensemble de la chaîne analytique : de la collecte et modélisation des données jusqu'à la création de tableaux de bord interactifs et la formulation de recommandations stratégiques.</p>
                         
-                        <p>My mission: reveal the hidden potential of your data to accelerate your business performance and optimize your decision-making processes.</p>
+                        <p>Ma mission : révéler le potentiel caché de vos données pour accélérer votre performance business et optimiser vos processus décisionnels.</p>
                     </div>
                     
                     <div class="stats fade-in">
@@ -642,19 +609,19 @@
                             <div class="col-md-4">
                                 <div class="stat-item">
                                     <div class="stat-number">5+</div>
-                                    <div class="stat-label">Years of experience</div>
+                                    <div class="stat-label">Années d'expérience</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="stat-item">
                                     <div class="stat-number">50+</div>
-                                    <div class="stat-label">Projects completed</div>
+                                    <div class="stat-label">Projets réalisés</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="stat-item">
                                     <div class="stat-number">15+</div>
-                                    <div class="stat-label">Satisfied clients</div>
+                                    <div class="stat-label">Clients satisfaits</div>
                                 </div>
                             </div>
                         </div>
@@ -667,14 +634,14 @@
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Education</h2>
+            <h2 class="section-title fade-in">Formation</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="education-item fade-in">
                         <div class="education-year">2022-2024</div>
                         <h4>MBA Business Analytics</h4>
-                        <h6 class="text-primary">Marwadi University, India</h6>
-                        <p>Advanced training in data analysis, business intelligence, predictive modeling and data-driven strategy. Specialization in data visualization, machine learning applied to business and decision process optimization.</p>
+                        <h6 class="text-primary">Marwadi University, Inde</h6>
+                        <p>Formation avancée en analyse de données, intelligence d'affaires, modélisation prédictive et stratégie data-driven. Spécialisation en visualisation de données, machine learning appliqué au business et optimisation des processus décisionnels.</p>
                         <ul class="list-unstyled">
                             <li><i class="fas fa-check text-primary me-2"></i> Data Mining & Machine Learning</li>
                             <li><i class="fas fa-check text-primary me-2"></i> Business Intelligence & Visualization</li>
@@ -684,12 +651,12 @@
                     
                     <div class="education-item fade-in">
                         <div class="education-year">2018-2021</div>
-                        <h4>Bachelor's Degree in Computer Science & Entrepreneurship</h4>
+                        <h4>Licence Informatique & Entrepreneuriat</h4>
                         <h6 class="text-primary">Burkina Institute of Technology</h6>
-                        <p>Multidisciplinary training combining computer development, project management and entrepreneurship. Acquisition of solid technical skills in programming, databases and information systems, complemented by a business and innovation approach.</p>
+                        <p>Formation pluridisciplinaire alliant développement informatique, gestion de projet et entrepreneuriat. Acquisition de compétences techniques solides en programmation, bases de données et systèmes d'information, complétées par une approche business et innovation.</p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-primary me-2"></i> Software Development & Databases</li>
-                            <li><i class="fas fa-check text-primary me-2"></i> Project Management & Agile Methodologies</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Développement logiciel & Bases de données</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Gestion de projet & Méthodologies Agiles</li>
                             <li><i class="fas fa-check text-primary me-2"></i> Innovation & Business Development</li>
                         </ul>
                     </div>
@@ -698,93 +665,86 @@
         </div>
     </section>
 
-   
-<!-- Skills Section -->
-<section id="skills" class="section skills">
-    <div class="container">
-        <h2 class="section-title fade-in">Skills</h2>
-        <div class="row g-4">
-            <!-- Compétences existantes -->
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-bar"></i>
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Compétences</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h5 class="skill-name">Power BI</h5>
+                        <p class="skill-level">Expert - Dashboards interactifs</p>
                     </div>
-                    <h5 class="skill-name">Power BI</h5>
-                    <p class="skill-level">Expert - Interactive Dashboards</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h5 class="skill-name">Tableau</h5>
+                        <p class="skill-level">Avancé - Visualisation de données</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h5 class="skill-name">Python</h5>
+                        <p class="skill-level">Avancé - Pandas, NumPy, Scikit-learn</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h5 class="skill-name">SQL</h5>
+                        <p class="skill-level">Expert - MySQL, PostgreSQL, T-SQL</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <h5 class="skill-name">Excel Avancé</h5>
+                        <p class="skill-level">Expert - VBA, Power Query, Pivot</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h5 class="skill-name">Azure SQL</h5>
+                        <p class="skill-level">Intermédiaire - Cloud Analytics</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h5 class="skill-name">Modélisation Métier</h5>
+                        <p class="skill-level">Expert - BPMN, UML</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h5 class="skill-name">KPIs & Métriques</h5>
+                        <p class="skill-level">Expert - Performance Management</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h5 class="skill-name">Tableau</h5>
-                    <p class="skill-level">Advanced - Data Visualization</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h5 class="skill-name">Python</h5>
-                    <p class="skill-level">Advanced - Pandas, NumPy, Scikit-learn</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h5 class="skill-name">SQL</h5>
-                    <p class="skill-level">Advanced - MySQL, PostgreSQL</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h5 class="skill-name">Advanced Excel</h5>
-                    <p class="skill-level">Expert - Power Query, Pivot</p>
-                </div>
-            </div>
-           
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h5 class="skill-name">KPIs & Metrics</h5>
-                    <p class="skill-level">Expert - Performance Management</p>
-                </div>
-            </div>
-
-            <!-- Nouvelles compétences ajoutées -->
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h5 class="skill-name">Business Intelligence</h5>
-                    <p class="skill-level">Expert - Data-Driven Strategy</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="skill-item fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h5 class="skill-name">Leadership</h5>
-                    <p class="skill-level">Advanced - Team Management</p>
-                </div>
-            </div>
-          
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="section">
@@ -796,8 +756,8 @@
                         <div class="service-icon">
                             <i class="fas fa-chart-pie"></i>
                         </div>
-                        <h4>Market Analysis</h4>
-                        <p>In-depth studies of market trends, competitive analysis and identification of business opportunities based on reliable data and actionable insights.</p>
+                        <h4>Analyse de Marché</h4>
+                        <p>Études approfondies des tendances marché, analyse concurrentielle et identification d'opportunités business basées sur des données fiables et des insights actionables.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -805,8 +765,8 @@
                         <div class="service-icon">
                             <i class="fas fa-chart-area"></i>
                         </div>
-                        <h4>Data Visualization</h4>
-                        <p>Creation of interactive dashboards and dynamic reports with Power BI and Tableau to transform your data into impactful visual insights.</p>
+                        <h4>Visualisation de Données</h4>
+                        <p>Création de tableaux de bord interactifs et de rapports dynamiques avec Power BI et Tableau pour transformer vos données en insights visuels percutants.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -814,8 +774,8 @@
                         <div class="service-icon">
                             <i class="fas fa-robot"></i>
                         </div>
-                        <h4>Reporting Automation</h4>
-                        <p>Development of automated solutions for recurring report generation, optimizing your time and ensuring data reliability.</p>
+                        <h4>Automatisation de Reporting</h4>
+                        <p>Développement de solutions automatisées pour la génération de rapports récurrents, optimisant votre temps et garantissant la fiabilité des données.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -823,8 +783,8 @@
                         <div class="service-icon">
                             <i class="fas fa-chess-knight"></i>
                         </div>
-                        <h4>Strategic Planning</h4>
-                        <p>Support in developing data-driven strategies, defining relevant KPIs and implementing management dashboards.</p>
+                        <h4>Planification Stratégique</h4>
+                        <p>Accompagnement dans l'élaboration de stratégies data-driven, définition de KPIs pertinents et mise en place de tableaux de bord de pilotage.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -832,8 +792,8 @@
                         <div class="service-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
-                        <h4>Process Optimization</h4>
-                        <p>Analysis and improvement of existing business processes by identifying bottlenecks and proposing innovative solutions.</p>
+                        <h4>Optimisation de Processus</h4>
+                        <p>Analyse et amélioration des processus métier existants par l'identification des goulots d'étranglement et la proposition de solutions innovantes.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -841,8 +801,8 @@
                         <div class="service-icon">
                             <i class="fas fa-lightbulb"></i>
                         </div>
-                        <h4>Business Intelligence Consulting</h4>
-                        <p>Complete support in your digital transformation: needs assessment, tool selection, team training and performance monitoring.</p>
+                        <h4>Conseil en Business Intelligence</h4>
+                        <p>Accompagnement complet dans votre transformation digitale : audit des besoins, choix des outils, formation des équipes et suivi de performance.</p>
                     </div>
                 </div>
             </div>
@@ -852,22 +812,26 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title fade-in">Completed Projects</h2>
+            <h2 class="section-title fade-in">Projets Réalisés</h2>
             <div class="projects-container">
                 <div class="projects-scroll">
                     <div class="project-card fade-in">
                         <div class="project-image project-image-1"></div>
                         <div class="project-content">
-                            <h4 class="project-title">Sales Performance Dashboard</h4>
+                            <h4 class="project-title">Dashboard Performance Commerciale</h4>
                             <p class="project-description">
-                                <strong>Context:</strong> Distribution company seeking to optimize its sales<br>
-                                <strong>Challenge:</strong> Lack of visibility on performance by region/product<br>
-                                <strong>Solution:</strong> Interactive dashboard with real-time KPIs and predictive analytics
+                                <strong>Contexte :</strong> Entreprise de distribution cherchant à optimiser ses ventes<br>
+                                <strong>Problématique :</strong> Manque de visibilité sur les performances par région/produit<br>
+                                <strong>Solution :</strong> Tableau de bord interactif avec KPIs temps réel et analyses prédictives
                             </p>
-                            
+                            <div class="project-tech">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">SQL Server</span>
+                                <span class="tech-tag">DAX</span>
+                            </div>
                             <div class="project-links">
                                 <a href="https://app.powerbi.com/view?r=eyJrIjoiExample1" class="project-link link-primary" target="_blank">Power BI</a>
-                                <a href="portfolio-detail.html" class="project-link link-secondary" target="_blank">Details</a>
+                                <a href="https://colab.research.google.com/drive/example1" class="project-link link-secondary" target="_blank">Colab</a>
                                 <a href="https://github.com/inoussa-simpore/sales-dashboard" class="project-link link-secondary" target="_blank">GitHub</a>
                             </div>
                         </div>
@@ -876,11 +840,11 @@
                     <div class="project-card fade-in">
                         <div class="project-image project-image-2"></div>
                         <div class="project-content">
-                            <h4 class="project-title">Customer Satisfaction Analysis</h4>
+                            <h4 class="project-title">Analyse Satisfaction Client</h4>
                             <p class="project-description">
-                                <strong>Context:</strong> Customer service of an e-commerce company<br>
-                                <strong>Challenge:</strong> Identify customer dissatisfaction factors<br>
-                                <strong>Solution:</strong> Sentiment analysis and customer segmentation with ML models
+                                <strong>Contexte :</strong> Service client d'une entreprise e-commerce<br>
+                                <strong>Problématique :</strong> Identifier les facteurs d'insatisfaction client<br>
+                                <strong>Solution :</strong> Analyse sentimentale et segmentation client avec modèles ML
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
@@ -890,7 +854,7 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://public.tableau.com/app/profile/inoussa/viz/CustomerSatisfaction" class="project-link link-primary" target="_blank">Tableau</a>
-                                <a href="projet-1-details.html" class="project-link link-secondary" target="_blank">Details</a>
+                                <a href="https://colab.research.google.com/drive/example2" class="project-link link-secondary" target="_blank">Colab</a>
                                 <a href="https://github.com/inoussa-simpore/customer-analysis" class="project-link link-secondary" target="_blank">GitHub</a>
                             </div>
                         </div>
@@ -899,16 +863,21 @@
                     <div class="project-card fade-in">
                         <div class="project-image project-image-3"></div>
                         <div class="project-content">
-                            <h4 class="project-title">HR Dashboard Project</h4>
+                            <h4 class="project-title">Prévision Demande Hôtelière</h4>
                             <p class="project-description">
-                                <strong>Context:</strong> Technology/pharmaceutical company with 1,470 employees facing critical talent management and strategic HR planning challenges<br>
-                                <strong>Challenge:</strong> Lack of visibility on departure risks, underutilized talents (74 R&D), and absence of predictive tools to optimize promotions and retention<br>
-                                <strong>Solution:</strong> Interactive HR dashboard with predictive analytics for proactive talent management
+                                <strong>Contexte :</strong> Chaîne hôtelière souhaitant optimiser sa gestion<br>
+                                <strong>Problématique :</strong> Prévoir l'occupation pour optimiser les tarifs<br>
+                                <strong>Solution :</strong> Modèle prédictif basé sur données historiques et saisonnalité
                             </p>
-                           
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Time Series</span>
+                                <span class="tech-tag">ARIMA</span>
+                                <span class="tech-tag">Power BI</span>
+                            </div>
                             <div class="project-links">
                                 <a href="https://app.powerbi.com/view?r=eyJrIjoiExample3" class="project-link link-primary" target="_blank">Power BI</a>
-                                <a href="portfolio-detail.html" class="project-link link-secondary" target="_blank">Details</a>
+                                <a href="https://colab.research.google.com/drive/example3" class="project-link link-secondary" target="_blank">Colab</a>
                                 <a href="https://github.com/inoussa-simpore/hotel-forecasting" class="project-link link-secondary" target="_blank">GitHub</a>
                             </div>
                         </div>
@@ -917,11 +886,11 @@
                     <div class="project-card fade-in">
                         <div class="project-image project-image-4"></div>
                         <div class="project-content">
-                            <h4 class="project-title">Banking Financial Analysis</h4>
+                            <h4 class="project-title">Analyse Financière Bancaire</h4>
                             <p class="project-description">
-                                <strong>Context:</strong> Financial institution analyzing credit risks<br>
-                                <strong>Challenge:</strong> Assess and predict default risks<br>
-                                <strong>Solution:</strong> Scoring model with behavioral pattern analysis
+                                <strong>Contexte :</strong> Institution financière analysant les risques de crédit<br>
+                                <strong>Problématique :</strong> Évaluer et prédire les risques de défaut<br>
+                                <strong>Solution :</strong> Modèle de scoring avec analyse des patterns de comportement
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
@@ -931,7 +900,7 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://app.powerbi.com/view?r=eyJrIjoiExample4" class="project-link link-primary" target="_blank">Power BI</a>
-                                <a href="projet-1-details.html" class="project-link link-secondary" target="_blank">Details</a>
+                                <a href="https://colab.research.google.com/drive/example4" class="project-link link-secondary" target="_blank">Colab</a>
                                 <a href="https://github.com/inoussa-simpore/credit-risk-analysis" class="project-link link-secondary" target="_blank">GitHub</a>
                             </div>
                         </div>
@@ -940,11 +909,11 @@
                     <div class="project-card fade-in">
                         <div class="project-image project-image-5"></div>
                         <div class="project-content">
-                            <h4 class="project-title">Supply Chain Optimization</h4>
+                            <h4 class="project-title">Optimisation Supply Chain</h4>
                             <p class="project-description">
-                                <strong>Context:</strong> Manufacturing company optimizing its supply chain<br>
-                                <strong>Challenge:</strong> Reduce costs and delivery times<br>
-                                <strong>Solution:</strong> Real-time dashboard with flow and inventory optimization
+                                <strong>Contexte :</strong> Entreprise manufacturière optimisant sa chaîne logistique<br>
+                                <strong>Problématique :</strong> Réduire les coûts et délais de livraison<br>
+                                <strong>Solution :</strong> Dashboard temps réel avec optimisation des flux et stocks
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">Excel VBA</span>
@@ -954,7 +923,7 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://public.tableau.com/app/profile/inoussa/viz/SupplyChain" class="project-link link-primary" target="_blank">Tableau</a>
-                                <a href="projet-1-details.html class="project-link link-secondary" target="_blank">Colab</a>
+                                <a href="https://colab.research.google.com/drive/example5" class="project-link link-secondary" target="_blank">Colab</a>
                                 <a href="https://github.com/inoussa-simpore/supply-chain-optimization" class="project-link link-secondary" target="_blank">GitHub</a>
                             </div>
                         </div>
@@ -965,7 +934,7 @@
     </section>
 
     <!-- Contact Section -->
-    <<section id="contact" class="section">
+    <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title fade-in">Contact</h2>
             <div class="row justify-content-center">
@@ -989,7 +958,7 @@
                                         <i class="fas fa-phone"></i>
                                     </div>
                                     <div class="contact-details">
-                                        <h6>Phone</h6>
+                                        <h6>Téléphone</h6>
                                         <p><a href="tel:+22670123456">+22655263911</a></p>
                                     </div>
                                 </div>
@@ -1011,7 +980,7 @@
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div class="contact-details">
-                                        <h6>Location</h6>
+                                        <h6>Localisation</h6>
                                         <p>Ouagadougou, Burkina Faso</p>
                                     </div>
                                 </div>
@@ -1029,7 +998,8 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h5>Inoussa Simpore</h5>
-                    <p>&copy; 2025 Inoussa Simpore. All rights reserved.</p>
+                    <p class="mb-3">Créé avec HTML, CSS, Bootstrap & ❤️ de l'analyse de données</p>
+                    <p>&copy; 2025 Inoussa Simpore. Tous droits réservés.</p>
                     
                     <div class="social-links">
                         <a href="inoussasimpore4@gmail.com" class="social-link">
@@ -1144,4 +1114,4 @@
         });
     </script>
 </body>
-</html>F
+</html>
