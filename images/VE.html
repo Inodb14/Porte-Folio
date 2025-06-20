@@ -1,23 +1,22 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard RH Avancé - Détails du Projet | Inoussa Simpore</title>
+    <title>Electric Vehicle Dashboard - Project Details | Your Name</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2563eb;
-            --secondary-color: #1e40af;
+            --secondary-color: #1d4ed8;
             --accent-color: #3b82f6;
             --text-dark: #1f2937;
             --text-light: #6b7280;
             --bg-light: #f8fafc;
             --white: #ffffff;
-            --success-color: #10b981;
+            --success-color: #3b82f6;
             --warning-color: #f59e0b;
             --danger-color: #ef4444;
         }
@@ -48,10 +47,12 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80') center/contain no-repeat;
+            opacity: 0.8;
+            z-index: 1;
         }
 
         .back-btn {
@@ -80,6 +81,7 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .project-subtitle {
@@ -106,6 +108,12 @@
             font-size: 0.9rem;
             font-weight: 500;
             border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         /* Content Sections */
@@ -244,8 +252,8 @@
         }
 
         .solution-card {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            border-left: 4px solid var(--success-color);
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-left: 4px solid var(--primary-color);
         }
 
         .card-title {
@@ -278,14 +286,8 @@
             border: 2px solid #e5e7eb;
             color: var(--text-light);
             font-size: 1.1rem;
-             width: 100%;
-            height: auto;              
-            min-height: 200px;        
-            max-height: 500px;         
-            object-fit: contain;       
-            display: block;           
-            margin: 0 auto;
         }
+
         .dashboard-screenshot {
             width: 100%;
             height: auto;              
@@ -294,10 +296,10 @@
             object-fit: contain;       
             display: block;           
             margin: 0 auto;
-            }
+        }
 
-        /* HR Metrics Grid */
-        .hr-metrics {
+        /* EV Metrics Grid */
+        .ev-metrics {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
@@ -329,7 +331,7 @@
             color: var(--text-light);
         }
 
-        .metric-positive { color: var(--success-color); }
+        .metric-positive { color: var(--primary-color); }
         .metric-warning { color: var(--warning-color); }
         .metric-danger { color: var(--danger-color); }
         .metric-primary { color: var(--primary-color); }
@@ -346,12 +348,12 @@
             padding: 25px;
             border-radius: 10px;
             text-align: center;
-            border-top: 3px solid var(--success-color);
+            border-top: 3px solid var(--primary-color);
         }
 
         .result-icon {
             font-size: 2.5rem;
-            color: var(--success-color);
+            color: var(--primary-color);
             margin-bottom: 15px;
         }
 
@@ -445,8 +447,26 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .project-header {
+                padding: 80px 0 40px;
+                background-attachment: scroll;
+            }
+            
             .project-title {
                 font-size: 2rem;
+            }
+            
+            .project-subtitle {
+                font-size: 1rem;
+            }
+            
+            .tech-tags {
+                justify-content: center;
+            }
+            
+            .tech-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
             }
             
             .challenge-solution {
@@ -468,6 +488,39 @@
             
             .action-btn {
                 width: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .project-header {
+                padding: 60px 0 30px;
+            }
+            
+            .project-title {
+                font-size: 1.8rem;
+            }
+            
+            .project-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .section-content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-title {
+                font-size: 1.5rem;
+            }
+            
+            .tech-tags {
+                gap: 5px;
+            }
+            
+            .tech-tag {
+                font-size: 0.7rem;
+                padding: 4px 8px;
             }
         }
 
@@ -493,69 +546,86 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 class="project-title">Advanced HR Dashboard</h1>
-                    <p class="project-subtitle">Predictive talent management system with behavioral analysis and strategic human resources planning</p>
+                    <h1 class="project-title">Electric Vehicle Dashboard</h1>
+                    <p class="project-subtitle">Interactive analytics platform for electric vehicle market analysis and adoption trends visualization</p>
                     <div class="tech-tags">
-                          <span class="tech-tag">Python</span>
                         <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">DAX Queries</span>
-                        <span class="tech-tag">Predictive Analytics</span>
-                        <span class="tech-tag">HR Analytics</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Market Analysis</span>
+                        <span class="tech-tag">EV Analytics</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Objectif du Projet -->
+    <!-- Project Objective -->
     <div class="container">
         <section class="content-section fade-in">
             <div class="section-header">
                 <h2 class="section-title">
                     <div class="section-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-car-battery"></i>
                     </div>
                     Project Objective
                 </h2>
             </div>
             <div class="section-content">
-                <p class="lead">Develop a predictive HR analytics system for a technology company with 1,470 employees, enabling talent management optimization and strategic human resources planning.</p>
+                <p class="lead">Create an comprehensive electric vehicle dashboard to analyze market trends, vehicle distribution, and adoption patterns across different regions and manufacturers.</p>
                 
                 <div class="challenge-solution">
                     <div class="challenge-card">
                         <h4 class="card-title">
                             <i class="fas fa-exclamation-triangle"></i>
-                            Critical HR Challenges
+                            Market Analysis Challenges
                         </h4>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Turnover risk:</strong> 8% approaching retirement (117 employees)</li>
-                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Promotional stagnation:</strong> 95.1% not eligible for promotions</li>
-                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Departmental imbalance:</strong> Excessive R&D concentration</li>
-                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Mixed satisfaction:</strong> Equal distribution of satisfaction/dissatisfaction</li>
-                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Lack of visibility:</strong> No predictive data on talents</li>
+                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Data fragmentation:</strong> EV information scattered across sources</li>
+                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Market visibility:</strong> Limited insights into adoption trends</li>
+                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Geographic analysis:</strong> No clear regional distribution view</li>
+                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Vehicle comparison:</strong> Difficulty comparing manufacturers</li>
+                            <li><i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i> <strong>Range analysis:</strong> No clear understanding of vehicle capabilities</li>
                         </ul>
                     </div>
                     
                     <div class="solution-card">
                         <h4 class="card-title">
-                            <i class="fas fa-chart-line"></i>
-                            HR Analytics Solution
+                            <i class="fas fa-chart-bar"></i>
+                            Dashboard Solution
                         </h4>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check me-2"></i> <strong>Real-time dashboard:</strong> HR KPIs and performance metrics</li>
-                            <li><i class="fas fa-check me-2"></i> <strong>Predictive analysis:</strong> Churn models and career progression</li>
-                            <li><i class="fas fa-check me-2"></i> <strong>Advanced segmentation:</strong> By department, level, geolocation</li>
-                            <li><i class="fas fa-check me-2"></i> <strong>Automatic alerts:</strong> Risk and opportunity reporting</li>
-                            <li><i class="fas fa-check me-2"></i> <strong>Strategic planning:</strong> HR prospective scenarios</li>
+                            <li><i class="fas fa-check me-2"></i> <strong>Unified interface:</strong> All EV data in one interactive platform</li>
+                            <li><i class="fas fa-check me-2"></i> <strong>Trend visualization:</strong> Growth patterns from 2010-2020</li>
+                            <li><i class="fas fa-check me-2"></i> <strong>Geographic mapping:</strong> State-by-state EV distribution</li>
+                            <li><i class="fas fa-check me-2"></i> <strong>Brand analysis:</strong> Manufacturer comparison and market share</li>
+                            <li><i class="fas fa-check me-2"></i> <strong>Smart filtering:</strong> Multi-dimensional data exploration</li>
                         </ul>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="ev-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value metric-primary">138</div>
+                        <div class="metric-label">Total Vehicles</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value metric-primary">70.2KM</div>
+                        <div class="metric-label">Avg Range</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value metric-primary">62%</div>
+                        <div class="metric-label">BEV Vehicles</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value metric-warning">38%</div>
+                        <div class="metric-label">HBEV Vehicles</div>
                     </div>
                 </div>
             </div>
         </section>
 
-    <!-- Objectif du Projet -->
-    
-          <!-- Aperçu Dashboard -->
+        <!-- Dashboard Preview -->
         <section class="content-section fade-in">
             <div class="section-header">
                 <h2 class="section-title">
@@ -565,175 +635,155 @@
                     Interactive Dashboard - Overview
                 </h2>
             </div>
-            <div class="section-content">     
+            <div class="section-content">
                 <div class="dashboard-preview">
-                    <h4>Real-Time HR Management Interface</h4>
+                    <h4>Electric Vehicle Analytics Interface</h4>
                     
-                    <!-- Image réelle du dashboard -->
-                    <div class="dashboard-image-container">
-                        <img src="images/image4.png" alt="Dashboard RH - Vue Principale" class="dashboard-screenshot">
-                        <div class="image-caption">
-                            <strong>Complete HR Dashboard</strong> - 1,470 employees analyzed • 12+ critical KPIs • Interactive visualizations
+                    <!-- Dashboard Image Placeholder -->
+                    <div class="dashboard-image">
+                        <div class="text-center">
+                            <i class="fas fa-car-battery fa-3x mb-3" style="color: var(--primary-color);"></i>
+                            <p><strong>EV Dashboard Screenshot</strong><br>
+                            Replace this placeholder with your dashboard image</p>
                         </div>
                     </div>
                     
-                    <!-- Boutons d'action -->
-                    <div style="text-align: center; margin: 30px 0;">
-                        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                            <a href="https://app.powerbi.com/groups/me/reports/98cbe5a2-2bf6-486b-8c1a-c297f495eb47/ReportSection54e809550830c37d2989?experience=power-bi" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="display: inline-flex; align-items: center; background: #2563eb; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1rem; box-shadow: 0 5px 15px rgba(37,99,235,0.3); transition: all 0.3s ease; border: 2px solid #2563eb;"
-                               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(37,99,235,0.4)'; this.style.backgroundColor='#1e40af'"
-                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(37,99,235,0.3)'; this.style.backgroundColor='#2563eb'">
-                                <i class="fas fa-chart-bar" style="margin-right: 8px;"></i>
-                                View Power BI Dashboard
-                            </a>
-                            
-                           
-                        </div>
-                    </div>
-                    
-                    <div class="row mt-4">
-                        <div class="col-md-4 text-center">
-                            <h5 class="text-primary">📊 Key Metrics</h5>
-                            <p class="small">Employee distribution, satisfaction, promotions, imminent departures</p>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <h5 class="text-primary">🎯 Predictive Insights</h5>
-                            <p class="small"> Performance and succession planning</p>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <h5 class="text-primary">⚡ Real-Time</h5>
-                            <p class="small">Automatic alerts and instant strategic recommendations</p>
-                        </div>
-                    </div>
+                    <p class="mt-3"><strong>Key Features:</strong> Real-time filtering • Multi-dimensional analysis • Interactive visualizations • Export capabilities</p>
                 </div>
             </div>
         </section>
 
-        <!-- Méthodologie -->
+        <!-- Methodology -->
         <section class="content-section fade-in">
             <div class="section-header">
                 <h2 class="section-title">
                     <div class="section-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    Methodology & Architecture
+                    Development Process
                 </h2>
             </div>
             <div class="section-content">
                 <div class="timeline">
                     <div class="timeline-item">
-                        <h5 class="timeline-title">Phase 1: HRIS Audit & Data Collection (3 weeks)</h5>
-                        <p class="timeline-description">Employee data extraction, performance evaluations, promotion history, geolocation. HRIS API integration with data quality validation and cleaning.</p>
+                        <h5 class="timeline-title">Phase 1: Data Collection & Cleaning </h5>
+                        <p class="timeline-description">Gathered EV registration data, vehicle specifications, and geographic information. Performed data validation, cleaning, and standardization of manufacturer names and model classifications.</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h5 class="timeline-title">Phase 2: HR Predictive Modeling (4 weeks)</h5>
-                        <p class="timeline-description">Development of churn prediction algorithms, promotion scoring, satisfaction analysis. Machine Learning with Random Forest and logistic regression for behavioral patterns.</p>
+                        <h5 class="timeline-title">Phase 2: Data Model Design </h5>
+                        <p class="timeline-description">Created normalized data structure, established relationships between vehicles, manufacturers, and geographic data. Designed efficient data model for optimal dashboard performance.</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h5 class="timeline-title">Phase 3: Advanced Power BI Dashboard (3 weeks)</h5>
-                        <p class="timeline-description">Creation of interactive visualizations, real-time KPIs, dynamic filters by department/level. Implementation of complex DAX measures and multi-level drill-down.</p>
+                        <h5 class="timeline-title">Phase 3: Dashboard Development </h5>
+                        <p class="timeline-description">Built interactive visualizations including trend analysis, geographic maps, manufacturer comparisons, and vehicle type breakdowns. Implemented dynamic filtering and drill-down capabilities.</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h5 class="timeline-title">Phase 4: Alerts & Automation (2 weeks)</h5>
-                        <p class="timeline-description">Configuration of automatic alerts for critical thresholds, imminent departure notifications, promotion recommendations. Automated ETL pipeline with daily refresh.</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h5 class="timeline-title">Phase 5: Training & Deployment (1 week)</h5>
-                        <p class="timeline-description">Training HR teams on dashboard usage, metrics interpretation, data-driven decision making. Complete documentation and maintenance plan.</p>
+                        <h5 class="timeline-title">Phase 4: Testing & Optimization </h5>
+                        <p class="timeline-description">Performance testing, user experience optimization, and dashboard responsiveness improvements. Added advanced features like CAFV eligibility analysis and model popularity rankings.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Impact Business -->
+        <!-- Business Impact -->
         <section class="content-section fade-in">
             <div class="section-header">
                 <h2 class="section-title">
                     <div class="section-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    Business Impact 
+                    Impact & Benefits
                 </h2>
             </div>
             <div class="section-content">
                 <div class="results-grid">
                     <div class="result-item">
                         <div class="result-icon">
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <h5 class="result-title">Predictive Visibility</h5>
-                        <p class="result-description">Proactive identification of HR risks 6 months in advance</p>
+                        <h5 class="result-title">Market Insights</h5>
+                        <p class="result-description">Clear visualization of EV adoption trends and growth patterns over time</p>
                     </div>
                     
                     <div class="result-item">
                         <div class="result-icon">
-                            <i class="fas fa-users-cog"></i>
+                            <i class="fas fa-map-marked-alt"></i>
                         </div>
-                        <h5 class="result-title">Talent Optimization</h5>
-                        <p class="result-description">Succession plan for 117 departures + promotion strategy for 74 R&D</p>
+                        <h5 class="result-title">Geographic Analysis</h5>
+                        <p class="result-description">State-by-state EV distribution insights for strategic planning</p>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h5 class="result-title">Brand Performance</h5>
+                        <p class="result-description">Manufacturer market share analysis with Tesla leading at 19 vehicles</p>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h5 class="result-title">Clean Energy Focus</h5>
+                        <p class="result-description">CAFV eligibility tracking for environmental impact assessment</p>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h5 class="result-title">Data Accessibility</h5>
+                        <p class="result-description">Easy filtering by city, utility, and vehicle type for targeted analysis</p>
                     </div>
                     
                     <div class="result-item">
                         <div class="result-icon">
                             <i class="fas fa-clock"></i>
                         </div>
-                        <h5 class="result-title">HR Efficiency</h5>
-                        <p class="result-description">70% reduction in manual employee data analysis time</p>
-                    </div>
-                    
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h5 class="result-title">Engagement Improvement</h5>
-                        <p class="result-description">+25% satisfaction expected through identified targeted actions</p>
-                    </div>
-                    
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h5 class="result-title">Turn-over Reduction</h5>
-                        <p class="result-description">Prevention of 85% unplanned departures through predictive alerts</p>
-                    </div>
-                    
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <i class="fas fa-euro-sign"></i>
-                        </div>
-                        <h5 class="result-title">Generated Savings</h5>
-                        <p class="result-description">€450K/year saved in recruitment and training costs</p>
+                        <h5 class="result-title">Time Efficiency</h5>
+                        <p class="result-description">90% reduction in manual data analysis time for stakeholders</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Call to Action -->
+        <section class="actions-section">
+            <div class="container">
+                <h3>Interested in Similar Analytics Solutions?</h3>
+                <p>Let's discuss how data visualization can transform your business insights</p>
+                <div class="action-buttons">
+                    <a href="mailto:your-email@example.com" class="action-btn">
+                        <i class="fas fa-envelope me-2"></i> Contact Me
+                    </a>
+                    <a href="#" class="action-btn secondary">
+                        <i class="fas fa-download me-2"></i> View Live Demo
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h5>Inoussa Simpore</h5>
-                    <p>&copy;  2025 Inoussa Simpore. All rights reserved.</p>
+                    <h5>Your Name</h5>
+                    <p>&copy; 2025 Your Name. All rights reserved.</p>
                     
                     <div class="social-links">
-                        <a href="mailto:inoussasimpore4@gmail.com" class="social-link" title="Envoyer un email">
+                        <a href="mailto:your-email@example.com" class="social-link" title="Send Email">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="https://github.com/inoussa-simpore" class="social-link" target="_blank" rel="noopener noreferrer" title="Voir le profil GitHub">
+                        <a href="https://github.com/your-github" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://colab.research.google.com/github/inoussa-simpore" class="social-link" target="_blank" rel="noopener noreferrer" title="Voir les projets Google Colab">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/inoussa-simpore" class="social-link" target="_blank" rel="noopener noreferrer" title="Voir le profil LinkedIn">
+                        <a href="https://linkedin.com/in/your-linkedin" class="social-link" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
@@ -741,6 +791,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         // Fade in animation on scroll
